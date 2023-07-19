@@ -1,4 +1,4 @@
-<!-- PHP Script 1 -->
+<!-- PHP script 1 -->
 <?php
 session_start();
 
@@ -6,6 +6,7 @@ if (!isset($_SESSION['username'])) {
     $_SESSION['msg'] = "You must log in first";
     header('location: login.php');
 }
+
 if (isset($_GET['logout'])) {
     session_destroy();
     unset($_SESSION['username']);
@@ -19,26 +20,24 @@ if (isset($_GET['logout'])) {
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Home</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<link rel="stylesheet" href="Inventmng/srtdash/assets/bootstrap.min.css">
-    <title>Index</title>
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="Inventmng/srtdash/assets/bootstrap.min.css">
 </head>
 <body>
 
 <div class="content">
-    <!-- PHP Script 2 -->
     <!-- Notification message-->
-  	<?php if (isset($_SESSION['success'])): ?>
-      <div class="error success" >
-      	<h3>
-          <?php
-echo $_SESSION['success'];
-unset($_SESSION['success']);
-?>
-      	</h3>
-      </div>
-  	<?php endif?>
+    <?php if (isset($_SESSION['success'])): ?>
+        <div class="error success">
+            <h3>
+                <?php
+                echo $_SESSION['success'];
+                unset($_SESSION['success']);
+                ?>
+            </h3>
+        </div>
+    <?php endif ?>
     <!-- Logged in as user information -->
 </div>
 </body>
@@ -48,7 +47,7 @@ unset($_SESSION['success']);
 
 <!-- HTML 2 -->
 <!doctype html>
-<html class="no-js" lang="en">
+<html>
 
 <head>
     <meta charset="utf-8">
@@ -76,81 +75,36 @@ unset($_SESSION['success']);
                             <li>
                                 <a href="table.php" aria-expanded="true"><i class="fa fa-table"></i>
                                     <span>Item Records</span></a>
-                               <!-- <ul class="collapse">
-                                    <li><a href="table-basic.html">basic table</a></li>
-                                    <li><a href="table-layout.html">table layout</a></li>
-                                    <li><a href="datatable.html">datatable</a></li>
-                                </ul>
-								!-->
-                            </li>
                             </li>
                         </ul>
                     </nav>
                 </div>
             </div>
         </div>
-        
-        <!-- sidebar menu area end -->
-        <!-- main content area start -->
+
         <div class="main-content">
-            <!-- header area start -->
-            <div class="header-area">
+            <div>
                 <div class="row align-items-center">
-                    <!-- nav and search button -->
-                    <div class="col-md-6 col-sm-8 clearfix">
-                        <div class="nav-btn pull-left">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
-                        <div class="search-box pull-left">
+                    <div>
+                        <div>
+                            <!-- Search -->
                             <form action="#">
                                 <input type="text" name="search" placeholder="Search..." required>
                                 <i class="ti-search"></i>
                             </form>
                         </div>
                     </div>
-                    <!-- profile info & task notification -->
-                    <div class="col-md-6 col-sm-4 clearfix">
-                        <ul>
-                        </ul>
-                    </div>
+                    <br>
+                    <a class="dropdown-item" href="index.php?logout='1'"><button>Log out</button></a>
+                    <hr>
                 </div>
             </div>
-
-            <!-- Page title -->
-            <div class="page-title-area">
-                <div class="row align-items-center">
-                    <div class="col-sm-6">
-                        <div class="breadcrumbs-area clearfix">
-                            <h4 class="page-title pull-left">Dashboard</h4>
-                            <ul class="breadcrumbs pull-left">
-                                <li><a href="index.php">Home</a></li>
-                                <li><span>Dashboard</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 clearfix">
-                        <div class="user-profile pull-right">
-                            <img class="avatar user-thumb" src="assets/images/author/avatar.png" alt="avatar">
-                            <h4 class="user-name dropdown-toggle" data-toggle="dropdown"><?php echo $_SESSION['username'] ?> <i class="fa fa-angle-down"></i></h4>
-                            <div class="dropdown-menu">
-
-							<a class="dropdown-item" href="index.php?logout='1'">Log Out</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-          <div>
-<!-- PHP script 2 -->
-<?php if (isset($_SESSION['first_name'])): ?>
-<h2 style="text-align:center"> Welcome <strong><?php echo $_SESSION['first_name'];
-
-echo " ";
-echo $_SESSION['last_name']; ?></strong></h2>
-<?php endif?>
-
+        </div>
+    </div>
 </body>
 </html>
+
+<!-- PHP Script 2 -->
+<?php if (isset($_SESSION['first_name'])): ?>
+    <h2 style="text-align:center"> Welcome <strong><?php echo $_SESSION['first_name']; echo " "; echo $_SESSION['last_name']; ?></strong></h2>
+<?php endif ?>
