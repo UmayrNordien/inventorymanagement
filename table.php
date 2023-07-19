@@ -20,45 +20,98 @@ if (isset($_GET['logout'])) {
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Inventory Management System</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: #333;
+            margin-right: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f5f5f5;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        .card {
+            margin-bottom: 20px;
+        }
+
+        .header-title {
+            margin-bottom: 10px;
+        }
+
+        .single-table {
+            overflow-x: auto;
+        }
+
+        /* Responsive Styles */
+
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 10px;
+            }
+
+            .navbar a {
+                margin-right: 10px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            h1 {
+                font-size: 24px;
+            }
+
+            form {
+                margin-bottom: 10px;
+            }
+
+            table {
+                font-size: 12px;
+            }
+        }
+    </style>
 </head>
 
 <body>
     <!-- Navigation -->
-    <div class="sidebar-menu">
-        <div class="sidebar-header">
-            <div class="logo">
-                <a href="index.php"><img src="assets/images/icon/logo.png" alt="logo"></a>
-            </div>
-        </div>
-
-        <div class="main-menu">
-            <div class="menu-inner">
-                <nav>
-                    <ul class="metismenu" id="menu">
-                        <li>
-                            <a href="index.php" aria-expanded="true"><span>Dashboard</span></a>
-                        </li>
-                        <li class="active">
-                            <a href="table.php" aria-expanded="true"><span>Item Records</span></a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
+    <div class="navbar">
+        <a href="index.php">Dashboard</a>
+        <a href="table.php">Item Records</a>
     </div>
 
-    <div>
-        <div>
-            <form action="#">
-                <input type="text" name="search" placeholder="Search..." required>
-                <i class="ti-search"></i>
-            </form>
-        </div>
-    </div>
-
-    <hr>
-
-    <h1 style="text-align:center">Add Item Here</h1>
+    <h1>Add Item Here</h1>
 
     <form method="POST" action="additem.php">
         <div class="form-group">
@@ -107,14 +160,14 @@ if (isset($_GET['logout'])) {
                                                 $count++;
                                         ?>
                                                 <tr>
-                                                    <th><?php echo $count ?></th>
-                                                    <th><?php echo $row["product_name"] ?></th>
-                                                    <th><?php echo $row["price"] ?></th>
-                                                    <th><?php echo $row["quantity"] ?></th>
-                                                    <th>
+                                                    <td><?php echo $count ?></td>
+                                                    <td><?php echo $row["product_name"] ?></td>
+                                                    <td><?php echo $row["price"] ?></td>
+                                                    <td><?php echo $row["quantity"] ?></td>
+                                                    <td>
                                                         <a href="edit.php?id=<?php echo $row["product_id"] ?>">Edit</a>
                                                         <a href="deleteitem.php?id=<?php echo $row["product_id"] ?>">Delete</a>
-                                                    </th>
+                                                    </td>
                                                 </tr>
                                         <?php
                                             }
