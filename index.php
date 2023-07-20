@@ -43,118 +43,124 @@ if (isset($_GET['logout'])) {
 </html>
 
 <!-- ///////////////////////////////// -->
-<!-- HTML 2 -->
 
+<!-- HTML 2 -->
 <!doctype html>
 <html>
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>srtdash - ICO Dashboard</title>
+    <title>Dashboard</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #fff;
-        }
-        
-        .page-container {
-            display: flex;
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #fff;
+    }
+
+    .page-container {
+        display: flex;
+        min-height: 100vh;
+    }
+
+    .sidebar-menu {
+        width: 250px;
+        background-color: #333;
+        color: #fff;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .sidebar-menu .logo {
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .sidebar-menu .logo img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .menu-inner nav ul {
+        list-style: none;
+        padding-left: 0;
+        margin: 0;
+    }
+
+    .menu-inner nav ul li {
+        margin-bottom: 10px;
+    }
+
+    .menu-inner nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+    }
+
+    .menu-inner nav ul li a i {
+        margin-right: 10px;
+    }
+
+    .main-content {
+        flex: 1;
+        padding: 20px;
+        background-color: #fff;
+    }
+
+    .logout-btn {
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .logout-btn a {
+        padding: 10px 15px;
+        background-color: #f44336;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    .logout-btn a:hover {
+        background-color: #d32f2f;
+    }
+
+    .welcome-message {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .welcome-message h2 {
+        margin: 0;
+    }
+
+    @media (max-width: 767px) {
+        /* .page-container {
             flex-direction: column;
-            min-height: 100vh;
-        }
-        
+        } */
+
         .sidebar-menu {
-            width: 100%;
-            background-color: #333;
-            color: #fff;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-        
-        .sidebar-menu .logo {
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        
-        .sidebar-menu .logo img {
-            max-width: 100%;
-            height: auto;
-        }
-        
-        .menu-inner nav ul {
-            list-style: none;
-            padding-left: 0;
-            margin: 0;
-        }
-        
-        .menu-inner nav ul li {
-            margin-bottom: 10px;
-        }
-        
-        .menu-inner nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-        }
-        
-        .menu-inner nav ul li a i {
-            margin-right: 10px;
-        }
-        
-        .main-content {
-            padding: 20px;
-            background-color: #fff;
-        }
-        
-        .logout-btn {
-            text-align: center;
-            margin-top: 20px;
-        }
-        
-        .logout-btn a {
-            padding: 10px 15px;
-            background-color: #f44336;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-        }
-        
-        .logout-btn a:hover {
-            background-color: #d32f2f;
-        }
-        
-        .welcome-message {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        
-        .welcome-message h2 {
-            margin: 0;
+            width: 40%;
+            margin-bottom: 20px; /* Add margin to separate from the main content */
         }
 
-        @media (min-width: 768px) {
-            .page-container {
-                flex-direction: row;
-            }
-            
-            .sidebar-menu {
-                width: 250px;
-            }
+        .main-content {
+            width: 100%;
         }
-    </style>
+    }
+</style>
+
 </head>
 
 <body>
     <div class="page-container">
         <div class="sidebar-menu">
             <div class="logo">
-                <a href="index.php"><img src="" alt="site logo"></a>
+                <a href="index.php"><img src="https://i.postimg.cc/2S73XHGw/SiteLogo.png" alt="site logo"></a>
             </div>
             <div class="menu-inner">
                 <nav>
@@ -163,13 +169,10 @@ if (isset($_GET['logout'])) {
                             <a href="index.php" aria-expanded="true"><i class="ti-dashboard"></i><span>Dashboard</span></a>
                         </li>
                         <li>
-                            <a href="table.php" aria-expanded="true"><i class="fa fa-table"></i><span>Item Records</span></a>
+                            <a href="table.php" aria-expanded="true"><i class="fa fa-table"></i><span>Inventory</span></a>
                         </li>
                     </ul>
                 </nav>
-            </div>
-            <div class="logout-btn">
-                <a href="index.php?logout='1'">Log out</a>
             </div>
         </div>
         <div class="main-content">
@@ -178,9 +181,11 @@ if (isset($_GET['logout'])) {
                     <h2>Welcome, <?php echo $_SESSION['first_name'] . ' ' . $_SESSION['last_name']; ?></h2>
                 </div>
             <?php endif ?>
+            <div class="logout-btn">
+                <a href="index.php?logout='1'">Log out</a>
+            </div>
         </div>
     </div>
 </body>
 
 </html>
-

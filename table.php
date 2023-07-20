@@ -29,25 +29,64 @@ if (isset($_GET['logout'])) {
         }
 
         .navbar {
-            background-color: #f5f5f5;
+            background-color: #353535;
             padding: 20px;
         }
 
         .navbar a {
             text-decoration: none;
-            color: #333;
+            color: #fff;
             margin-right: 20px;
         }
 
         h1 {
             text-align: center;
         }
-
+        h4{
+            margin-left: 10px;
+        }
+        /* Form */
         form {
             margin-bottom: 20px;
             text-align: center;
         }
 
+        .form-group {
+        margin-bottom: 20px;
+        }
+    
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .form-group input[type="text"],
+        .form-group input[type="number"] {
+            width: 25%;
+            padding: 10px;
+            border: none;
+            /* border: 1px solid #ccc; */
+            border-radius: 5px;
+            box-shadow: inset 5px 4px 9px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-default{
+            border: none;
+            border-radius: 5px;
+            background-color: #e4e4e4;
+            padding: 10px;
+            box-shadow: 5px 4px 9px 2px rgba(0, 0, 0, 0.1);
+
+        }
+        .btn-default:hover{
+            opacity: 80%;
+        }
+        .btn-default:active{
+            box-shadow: inset 5px 4px 9px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Table */
         table {
             width: 100%;
             border-collapse: collapse;
@@ -59,9 +98,9 @@ if (isset($_GET['logout'])) {
         }
 
         th {
-            background-color: #f5f5f5;
-            font-weight: bold;
-            text-align: left;
+            background-color: #353535;
+            color: #fff;
+            text-align: left; /* align with item text */
         }
 
         .card {
@@ -77,7 +116,6 @@ if (isset($_GET['logout'])) {
         }
 
         /* Responsive Styles */
-
         @media (max-width: 768px) {
             .navbar {
                 padding: 10px;
@@ -108,7 +146,7 @@ if (isset($_GET['logout'])) {
     <!-- Navigation -->
     <div class="navbar">
         <a href="index.php">Dashboard</a>
-        <a href="table.php">Item Records</a>
+        <a href="table.php">Inventory</a>
     </div>
 
     <h1>Add Item Here</h1>
@@ -116,17 +154,17 @@ if (isset($_GET['logout'])) {
     <form method="POST" action="additem.php">
         <div class="form-group">
             <label for="name">Product Name</label>
-            <input type="text" class="form-control" name="product_name">
+            <input type="text" class="form-control" name="product_name" placeholder="Enter Name">
         </div>
         <div class="form-group">
             <label for="name">Price</label>
-            <input type="text" class="form-control" name="price">
+            <input type="text" class="form-control" name="price" min="1" max="999.99" placeholder="Enter Name">
         </div>
         <div class="form-group">
             <label for="name">Quantity</label>
-            <input type="number" name="quant" id="quant" min="1" max="">
+            <input type="number" class="form-control" name="quant" id="quant" min="1" max="999.99" placeholder="Enter Quantity">
         </div>
-        <button type="submit" class="btn btn-default" name="add">Add item</button>
+        <button type="submit" class="btn btn-default" name="add">Add item +</button>
     </form>
 
     <div class="main-content-inner">
@@ -135,7 +173,7 @@ if (isset($_GET['logout'])) {
             <div class="col-lg-6 mt-5">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="header-title">Products</h4>
+                        <h4 class="header-title">Inventory</h4>
                         <div class="single-table">
                             <div class="table-responsive">
                                 <!-- Table -->

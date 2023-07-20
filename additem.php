@@ -18,7 +18,7 @@
 
 // Variables
 $item_name = "";
-$item_price    = "";
+$item_price = "";
 
 // Connect to the database
 $db = mysqli_connect('localhost', 'root', '', 'inventorymanagement');
