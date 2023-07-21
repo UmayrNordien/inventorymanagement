@@ -107,7 +107,15 @@ if (isset($_GET['logout'])) {
     .main-content {
         flex: 1;
         padding: 20px;
-        background-color: #fff;
+        background:
+        radial-gradient(35.36% 35.36% at 100% 25%,#0000 66%,#f8f8f8 68% 70%,#0000 72%) 55px 55px/calc(2*55px) calc(2*55px),
+        radial-gradient(35.36% 35.36% at 0    75%,#0000 66%,#f8f8f8 68% 70%,#0000 72%) 55px 55px/calc(2*55px) calc(2*55px),
+        radial-gradient(35.36% 35.36% at 100% 25%,#0000 66%,#f8f8f8 68% 70%,#0000 72%) 0 0/calc(2*55px) calc(2*55px),
+        radial-gradient(35.36% 35.36% at 0    75%,#0000 66%,#f8f8f8 68% 70%,#0000 72%) 0 0/calc(2*55px) calc(2*55px),
+        repeating-conic-gradient(#ffffff 0 25%,#0000 0 50%) 0 0/calc(2*55px) calc(2*55px),
+        radial-gradient(#0000 66%,#f8f8f8 68% 70%,#0000 72%) 0 calc(55px/2)/55px 55px
+        #ffffff;
+
     }
 
     .logout-btn {
@@ -170,6 +178,9 @@ if (isset($_GET['logout'])) {
                         </li>
                         <li>
                             <a href="table.php" aria-expanded="true"><i class="fa fa-table"></i><span>Inventory</span></a>
+                        </li>
+                        <li>
+                            <a href="./calendar-workspace/calendar.php" aria-expanded="true"><i class="fa fa-table"></i><span>My Calendar</span></a>
                         </li>
                     </ul>
                 </nav>

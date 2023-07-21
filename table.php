@@ -20,6 +20,8 @@ if (isset($_GET['logout'])) {
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Inventory Management System</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Icons CSS -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
     <style>
         body {
@@ -145,8 +147,7 @@ if (isset($_GET['logout'])) {
 <body>
     <!-- Navigation -->
     <div class="navbar">
-        <a href="index.php">Dashboard</a>
-        <a href="table.php">Inventory</a>
+        <a href="index.php"><i class='bx bxs-chevrons-left'></i> Dashboard</a>
     </div>
 
     <h1>Add Item Here</h1>
