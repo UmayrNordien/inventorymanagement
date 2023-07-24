@@ -31,12 +31,12 @@ if (isset($_GET['logout'])) {
         <div class="error success">
             <h3>
                 <?php
-                echo $_SESSION['success'];
-                unset($_SESSION['success']);
-                ?>
+echo $_SESSION['success'];
+unset($_SESSION['success']);
+?>
             </h3>
         </div>
-    <?php endif ?>
+    <?php endif?>
     <!-- Logged in as user information -->
 </div>
 </body>
@@ -51,6 +51,8 @@ if (isset($_GET['logout'])) {
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <title>Dashboard</title>
     <style>
     body {
@@ -171,19 +173,35 @@ if (isset($_GET['logout'])) {
                 <a href="index.php"><img src="https://i.postimg.cc/2S73XHGw/SiteLogo.png" alt="site logo"></a>
             </div>
             <div class="menu-inner">
-                <nav>
-                    <ul class="metismenu" id="menu">
-                        <li class="active">
-                            <a href="index.php" aria-expanded="true"><i class="ti-dashboard"></i><span>Dashboard</span></a>
-                        </li>
-                        <li>
-                            <a href="table.php" aria-expanded="true"><i class="fa fa-table"></i><span>Inventory</span></a>
-                        </li>
-                        <li>
-                            <a href="./calendar-workspace/calendar.php" aria-expanded="true"><i class="fa fa-table"></i><span>My Calendar</span></a>
-                        </li>
-                    </ul>
-                </nav>
+            <nav>
+    <ul class="metismenu" id="menu">
+        <li class="active">
+            <a href="index.php" aria-expanded="true"><i class="ti-dashboard"></i><span>Dashboard</span></a>
+        </li>
+        <li>
+            <a href="table.php" aria-expanded="true"><i class="fa fa-table"></i><span>My Inventory</span></a>
+        </li>
+        <li>
+            <a href="./calendar-workspace/calendar.php" aria-expanded="true"><i class="fa fa-table"></i><span>My Calendar</span></a>
+        </li>
+        <li>
+            <a aria-expanded="true"><i class="fa fa-table"></i><span>My Tools :</span></a>
+        </li>
+
+        <li>
+            <a aria-expanded="true"><i class="fa fa-table"></i><span> - Number Generators</span></a>
+        </li>
+        <li>
+            <a href="./my-tools/randomnumgen1.php" aria-expanded="true"><i class="fa fa-table"></i><span>1-10</span></a>
+        </li>
+        <li>
+            <a href="./my-tools/randomnumgen2.php" aria-expanded="true"><i class="fa fa-table"></i><span>100-1000</span></a>
+        </li>
+        <li>
+            <a href="./my-tools/binaryconvert.php" aria-expanded="true"><i class="fa fa-table"></i><span> - Convert to Binary</span></a>
+        </li>
+    </ul>
+</nav>
             </div>
         </div>
         <div class="main-content">
@@ -191,12 +209,13 @@ if (isset($_GET['logout'])) {
                 <div class="welcome-message">
                     <h2>Welcome, <?php echo $_SESSION['first_name'] . ' ' . $_SESSION['last_name']; ?></h2>
                 </div>
-            <?php endif ?>
+            <?php endif?>
             <div class="logout-btn">
                 <a href="index.php?logout='1'">Log out</a>
             </div>
         </div>
     </div>
 </body>
-
+<!-- Bootstrap -->
+<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> -->
 </html>

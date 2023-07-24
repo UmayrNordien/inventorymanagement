@@ -1,0 +1,7 @@
+CREATE TABLE conversions (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    input_value TEXT NOT NULL,
+    output_value TEXT NOT NULL,
+    conversion_type ENUM('string_to_binary', 'binary_to_string') NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
