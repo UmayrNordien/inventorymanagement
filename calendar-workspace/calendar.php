@@ -1,4 +1,5 @@
 <?php
+
 function build_calendar($month, $year){
     // create an array of days in the week
     $daysofWeek = array('Sunday','Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday');
@@ -18,12 +19,18 @@ function build_calendar($month, $year){
     // now creating the HTML table //
     $calendar = "<table class='table table-bordered'>";
     $calendar .= "<center><h2>$monthName $year</h2></center>";
-
     $calendar .= "<tr>"; // [OPEN TR ROW]
     // creating calendar headers //
     foreach($daysofWeek as $day) {
+        
         $calendar .= "<th class='header'>$day</th>";
     }
+    // previous and next buttons
+    $calendar .= "<div class='text-center mt-4 mb-4'>";
+    $calendar .= "<a class='btn btn-xs btn-outline-dark me-1' href='?month=".date('m', mktime(0,0,0,$month-1,1,$year))."&year=".date('Y',mktime(0,0,0,$month-1,1,$year))."'>Previous Month</a>";
+    $calendar .= "<a class='btn btn-xs btn-outline-dark me-1' href='?month=".date('m')."&year=".date('Y')."'>Current Month</a>";
+    $calendar .= "<a class='btn btn-xs btn-outline-dark' href='?month=".date('m', mktime(0,0,0,$month+1,1,$year))."&year=".date('Y',mktime(0,0,0,$month+1,1,$year))."'>Next Month</a></center><br>";
+
     $calendar .= "</tr><tr>"; // [CLOSE TR ROW][OPEN TR ROW]
 
     // the variable $dayofWeek will make sure that there is only 7 col on the table //
@@ -104,13 +111,21 @@ function build_calendar($month, $year){
         .navbar {
             background-color: #353535;
             padding: 20px;
-            margin-bottom: 10vh;
+            margin-bottom: 5vh;
         }
 
         .navbar a {
             text-decoration: none;
             color: #fff;
             margin-right: 20px;
+        }
+        .navbar i {
+            font-text-decoration: none;
+            color: #FE347E;
+        }
+        .navbar i:hover {
+            font-text-decoration: none;
+            color: #83EEFF;
         }
 
         table {
@@ -123,7 +138,7 @@ function build_calendar($month, $year){
         }
 
         .today {
-            background-color: #ededed !important;
+            background-color: #c5c5c5 !important;
             box-shadow: inset 5px 4px 9px 2px rgba(51, 51, 51, 0.192) !important;
         }
     </style>
@@ -131,15 +146,20 @@ function build_calendar($month, $year){
 <body>
     <!-- Navigation -->
     <div class="navbar">
-        <a href="../index.php"><i class='bx bxs-chevrons-left'></i> Dashboard</a>
+        <a href="../index.php"><i class='bx bx-left-arrow bx-fade-down' ></i> Dashboard</a>
     </div>
     <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <?php
                  $dateComponents = getdate();
-                 $month = $dateComponents['mon'];
-                 $year = $dateComponents['year'];
+                 if(isset($_GET['month']) && isset($_GET['year'])){
+                    $month = $_GET['month']; 			     
+                    $year = $_GET['year'];
+                     }else{
+                    $month = $dateComponents['mon']; 			     
+                    $year = $dateComponents['year'];
+                    }
                  echo build_calendar($month, $year);
                 ?>
             </div>

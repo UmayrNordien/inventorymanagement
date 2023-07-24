@@ -41,6 +41,15 @@ if (isset($_GET['logout'])) {
             margin-right: 20px;
         }
 
+        .navbar i {
+            font-text-decoration: none;
+            color: #FE347E;
+        }
+        .navbar i:hover {
+            font-text-decoration: none;
+            color: #83EEFF;
+        }
+
         h1 {
             text-align: center;
         }
@@ -147,7 +156,7 @@ if (isset($_GET['logout'])) {
 <body>
     <!-- Navigation -->
     <div class="navbar">
-        <a href="index.php"><i class='bx bxs-chevrons-left'></i> Dashboard</a>
+        <a href="index.php"><i class='bx bx-left-arrow bx-fade-down' ></i> Dashboard</a>
     </div>
 
     <h1>Add Item Here</h1>

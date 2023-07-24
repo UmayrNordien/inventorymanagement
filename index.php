@@ -125,7 +125,7 @@ if (isset($_GET['logout'])) {
 
     .logout-btn a {
         padding: 10px 15px;
-        background-color: #f44336;
+        background-color: #FE347E;
         color: #fff;
         border: none;
         border-radius: 5px;
@@ -134,7 +134,7 @@ if (isset($_GET['logout'])) {
     }
 
     .logout-btn a:hover {
-        background-color: #d32f2f;
+        background-color: #83EEFF !important;
     }
 
     .welcome-message {
