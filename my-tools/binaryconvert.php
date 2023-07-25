@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <!-- Icons CSS -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>    
     <title>String and Binary Converter</title>
     <style>
         body {
@@ -48,6 +52,45 @@
             font-text-decoration: none;
             color: #83EEFF;
         }
+
+        h1{
+            margin-top: 25vh;
+        }
+
+        input{
+            width: 25%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            box-shadow: inset 5px 4px 9px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        input:focus {
+        outline: none;
+        }
+
+        .convert-btn {
+            margin-top: 10vh;
+            padding: 10px 15px;
+            background-color: #FE347E;
+            color: #fff;
+            font-weight: 500;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            cursor: pointer;
+            /* Match the button width to the box width */
+            width: fit-content !important;
+            width: -moz-fit-content;
+            width: -webkit-fit-content;
+            width: -o-fit-content;
+        }
+
+        .convert-btn:hover {
+            background-color: #83EEFF;
+            color: #FE347E !important;
+        }
     </style>
 </head>
 <body>
@@ -61,7 +104,7 @@
     <form method="post" action="">
         <label for="input">Enter a String or Binary:</label>
         <input type="text" name="input" id="input" required>
-        <button type="submit">Convert</button>
+        <button class="convert-btn" type="submit">Convert</button>
     </form>
     <br>
 

@@ -24,7 +24,6 @@
             background-size: 139px 80px;
 
             overflow-x: hidden !important;
-
         }
 
         .navbar {

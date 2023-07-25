@@ -34,24 +34,32 @@
             margin-bottom: 20px;
         }
         
-        .form-group input,
-        .form-group input[type="submit"] {
+        .form-group input {
             width: 100%;
             padding: 10px;
-            border: 1px solid #ccc;
+            border: none;
             border-radius: 5px;
+            box-shadow: inset 5px 4px 9px 2px rgba(0, 0, 0, 0.1);
             box-sizing: border-box;
         }
         
         .form-group input[type="submit"] {
-            background-color: #4caf50;
-            color: #fff;
+            background-color: #FE347E;
+            color: white;
             border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
             cursor: pointer;
+            /* Match the button width to the box width */
+            width: 100% !important;
+            width: -moz-fit-content;
+            width: -webkit-fit-content;
+            width: -o-fit-content;
         }
         
         .form-group input[type="submit"]:hover {
-            background-color: #45a049;
+            background-color: #83EEFF;
         }
         
         .login-btn {

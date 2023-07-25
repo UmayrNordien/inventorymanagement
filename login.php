@@ -1,7 +1,6 @@
 <!-- PHP script 1 -->
 <?php include('server.php')
 ?>
-
 <!-- HTML 1 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -62,6 +61,37 @@
     .form-group input[type="submit"]:hover {
         background-color: #45a049;
     }
+
+    #submit {
+            background-color: #FE347E;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            /* Match the button width to the box width */
+            width: 100% !important;
+            width: -moz-fit-content;
+            width: -webkit-fit-content;
+            width: -o-fit-content;
+        }
+
+        #submit:hover {
+            background-color: #83EEFF;
+        }
+
+        #password, #username{
+            width: 90%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            box-shadow: inset 5px 4px 9px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        #passoword, #username:focus {
+        outline: none;
+        }
     
     @media only screen and (max-width: 600px) {
         .container {

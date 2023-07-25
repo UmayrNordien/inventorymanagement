@@ -1,5 +1,4 @@
 <?php
-
 function build_calendar($month, $year){
     // create an array of days in the week
     $daysofWeek = array('Sunday','Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday');
