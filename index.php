@@ -23,6 +23,10 @@ if (isset($_SESSION['recent_links'])) {
     // If the recent links array doesn't exist, create it and store the current page URL
     $_SESSION['recent_links'] = [$_SERVER['REQUEST_URI']];
 }
+// Styles
+function rixcy_scripts() {
+    wp_enqueue_style( 'index', get_template_directory_uri() . '/css/index.css' );
+}
 ?>
 
 <!-- HTML 1 -->
@@ -81,7 +85,7 @@ unset($_SESSION['success']);
 
     .sidebar-menu {
         width: 250px;
-        background-color: #333;
+        background-color: #353535;
         color: #fff;
         padding: 20px;
         box-sizing: border-box;
@@ -121,10 +125,14 @@ unset($_SESSION['success']);
     .main-item{
         box-shadow: 5px 4px 9px 2px #151515;
         border-radius: 5px;
+        padding-top: 5px;
+        padding-bottom: 5px;
     }
     .item{
-        box-shadow: inset 5px 4px 9px 2px #151515;
+        box-shadow: 5px 4px 9px 2px #151515;
         border-radius: 5px;
+        padding-top: 5px;
+        padding-bottom: 5px;
     }
 
     .main-content {
@@ -278,10 +286,10 @@ unset($_SESSION['success']);
             </div>
         </li>
         <li>
-            <a href="table.php" aria-expanded="true" class="main-item"><i class="fa fa-table"></i><span>My Inventory</span></a>
+            <a href="table.php" aria-expanded="true" class="main-item"><i class="fa fa-table"></i><span><i class='bx bx-box'></i> My Inventory</span></a>
         </li>
         <li>
-            <a href="./calendar-workspace/calendar.php" aria-expanded="true" class="main-item"><i class="fa fa-table"></i><span>My Calendar</span></a>
+            <a href="./calendar-workspace/calendar.php" aria-expanded="true" class="main-item"><i class="fa fa-table"></i><span><i class='bx bx-calendar'></i> My Calendar</span></a>
         </li>
         <li class="mytools-btn">
             <a aria-expanded="true" onclick="myToolsmessage()"><i class="fa fa-table"></i><span>My Tools <i class='bx bx-down-arrow'></i></span></a>
@@ -291,16 +299,16 @@ unset($_SESSION['success']);
             <a aria-expanded="true" class="main-item"><i class="fa fa-table"></i><span>Number Generators</span></a>
         </li> -->
         <li>
-            <a href="./my-tools/randomnumgen1.php" aria-expanded="true" class="item"><i class="fa fa-table"></i><span>1-10</span></a>
+            <a href="./my-tools/randomnumgen1.php" aria-expanded="true" class="item"><i class="fa fa-table"></i><span class="nav-icon"></span><i class='bx bx-dice-1'></i> Generate 1-10</span></a>
         </li>
         <li>
-            <a href="./my-tools/randomnumgen2.php" aria-expanded="true" class="item"><i class="fa fa-table"></i><span>100-1000</span></a>
+            <a href="./my-tools/randomnumgen2.php" aria-expanded="true" class="item"><i class="fa fa-table"></i><span><i class='bx bx-dice-3'></i> Generate 100-1000</span></a>
         </li>
         <li>
-            <a href="./my-tools/binaryconvert.php" aria-expanded="true" class="item"><i class="fa fa-table"></i><span>Convert to Binary</span></a>
+            <a href="./my-tools/binaryconvert.php" aria-expanded="true" class="item"><i class="fa fa-table"></i><span><i class='bx bx-loader'></i> Convert to Binary</span></a>
         </li>
         <li>
-            <a href="./my-tools/editor.php" aria-expanded="true" class="item"><i class="fa fa-table item"></i><span>Code Editor</span></a>
+            <a href="./my-tools/editor.php" aria-expanded="true" class="item"><i class="fa fa-table item"></i><span><i class='bx bx-edit-alt nav-icon'></i>Code Editor</span></a>
         </li>
     </ul>
 </nav>
@@ -312,10 +320,9 @@ unset($_SESSION['success']);
                     <h2>Welcome, <?php echo $_SESSION['first_name'] . ' ' . $_SESSION['last_name']; ?></h2>
                 </div>
             <?php endif?>
-            <div class="logout-btn" onclick="myLogoutmessage">
-                <a href="index.php?logout='1'">Log out</a>
+            <div class="logout-btn">
+                <a href="index.php?logout='1'" onclick="myLogoutmessage()">Log out</a>
             </div>
-            <div class="card-container row">
             <!-- Recent Links -->
             <div class="card-container row">
                 <div class="col-md-4">
