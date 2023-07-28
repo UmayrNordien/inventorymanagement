@@ -1,0 +1,26 @@
+//OVERVIEW 
+
+// Product
+CREATE TABLE `product` (
+  `product_id` PRIMARY KEY int(20) NOT NULL AUTO_INCREMENT,
+  `product_name` varchar(30) NOT NULL,
+  `price` float NOT NULL,
+  `quantity` int(10) NOT NULL
+);
+
+INSERT INTO `product` (`product_name`, `price`, `quantity`) VALUES
+('Example 1', 99.99, 99);
+
+
+//Register
+CREATE TABLE `register` (
+  `username` varchar(20) NOT NULL,
+  `first_name` varchar(30) NOT NULL,
+  `last_name` varchar(30) NOT NULL,
+  `mobile` int(15) NOT NULL,
+  `email` varchar(30) NOT NULL,
+  `password_1` varchar(50) NOT NULL
+);
+
+INSERT INTO `register` (`username`, `first_name`, `last_name`, `mobile`, `email`, `password_1`) VALUES
+('Umayr', 'Umayr', 'Nordien', 655578205, 'umayrnordien@gmail.com', 'a1461528a70be5888daea8deb0de9ff2');

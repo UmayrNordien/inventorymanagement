@@ -1,5 +1,5 @@
 <!-- PHP script 1 -->
-<?php include('server.php')
+<?php include('server.php') // copies over the code into this page
 ?>
 <!-- HTML 1 -->
 <!DOCTYPE html>
@@ -112,7 +112,7 @@
             <div class="signin-form">
                 <h2 class="form-title">LOGIN</h2>
                 <!-- Login Form -->
-                <form method="POST" class="register-form" action="login.php">
+                <form method="POST" class="register-form" action="login.php"> <!-- where the data should be submitted = the server.php file -->
                     <!-- Name field -->
                     <div class="form-group">
                         <label for="username">Name:</label>
